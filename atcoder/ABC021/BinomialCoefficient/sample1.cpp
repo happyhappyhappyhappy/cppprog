@@ -23,6 +23,4 @@ void COMInit(){
 long long COM(int n,int k){
     if(n < k) return 0;
     if(n < 0 || k < 0) return 0;
-    
-
 }
