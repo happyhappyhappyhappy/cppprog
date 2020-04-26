@@ -11,7 +11,7 @@ void COMInit(){
     fac[1] = 1;
     finv[0] = 1;
     finv[1] = 1;
-    inv[0] = 1;
+    inv[1] = 1;
     for (int j = 2; j < MAX; j++)
     {
         fac[j] = (fac[j-1] * j) % MOD;
@@ -23,4 +23,10 @@ void COMInit(){
 long long COM(int n,int k){
     if(n < k) return 0;
     if(n < 0 || k < 0) return 0;
+    return fac[n] * ((finv[k]*finv[n-k])%MOD)%MOD;
+}
+
+int main(){
+    COMInit();
+    cout << COM(10,2) << endl;
 }
